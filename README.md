@@ -1,11 +1,8 @@
-# Method of the month: The Newey-West estimator and interrupted time series
-A ten-minute rough-and-ready talk introducing the Newey-West
-heteroskedasticity- and autocorrelation-robust estimator for a non-technical
-audience and assessing how useful it is for interrupted time series
-analysis of health policy interventions.
+# HDAT9400 Data Management: S, M, L, XL Data
+A 45-minute lecture discussing the size of different kinds of health datasets, the performance characteristics
+of different data processing technologies, and introducing the concept of algorithmic time complexity.
 
-Delivered to the Medicines Policy Research Unit monthly Work In Progress
-meeting on 20 May 2021.
+To be delivered on 19 October 2021. 
 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
