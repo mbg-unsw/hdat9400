@@ -19,15 +19,18 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{tikzpagenodes}
-\usepackage{natbib}
+\usepackage[round]{natbib}
 \usepackage{gitinfo2}
 
 \renewcommand{\gitMark}{\color{gray}\texttt{\tiny\gitBranch\,@\,\gitAbbrevHash\,\gitAuthorDate}}
+
+\renewcommand{\bibsection}{} % suppress "References" section
 
 \setbeamertemplate{navigation symbols}{} % remove navigation symbols
 \setbeamercolor*{item}{fg=darkred}
 
 \title{HDAT9400 Data Management: S, M, L, XL Data}
+\institute{\url{https://github.com/mbg-unsw/hdat9400}}
 \author{Malcolm Gillies}
 \date{19 October 2021}
 \usebackgroundtemplate{%
@@ -44,6 +47,25 @@
 \end{frame}
 }
 
+% -	How big are typical health data sets?
+% o	Examples: rows x columns
+% -	What are the performance characteristics of typical data processing methods?
+% o	In memory [R]
+% o	On disk sequential scan [SAS]
+% o	OLTP [RDBMS]
+% o	OLAP [DuckDB]
+% o	Parallel [Spark]
+% -	What size data can you analyse with R, SAS, or an RDBMS?
+%       Do some experiments and show results
+% -	Algorithms, efficiency and optimisation
+% o	Big O notation
+% o	Sorting, Indexes, hashing
+% o	SQL and query optimisation
+% -	Statistical modelling with bigger data
+% -	Final real-world examples
+% o	E.g. BHI hospital performance reporting, …
+
+
 \begin{frame}{Thanks}
     \begin{itemize}
         \item XXXX
@@ -51,8 +73,6 @@
 \end{frame}
 
 \begin{frame}{References}
-%        \bibliographystyle{apalike}
-%        \bibliographystyle{abbrv}
         \tiny\bibliography{hdat9400.bib}
         \bibliographystyle{abbrvnat}
 \end{frame}
