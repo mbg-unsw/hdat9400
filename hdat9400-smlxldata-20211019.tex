@@ -5,7 +5,7 @@
 % This work is licensed under a
 % Creative Commons Attribution-NonCommercial-ShareAlike 4.0
 % International Licence
-\documentclass[aspectratio=169,12pt]{beamer} % XXXX fix AR here
+\documentclass[aspectratio=169,12pt,usepdftitle=false]{beamer} % XXXX fix AR here
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
@@ -22,11 +22,16 @@
 \usepackage[round]{natbib}
 \usepackage{gitinfo2}
 
+\hypersetup{pdfauthor={(C) 2021 Malcolm Gillies. CC-BY-NC-SA},
+            pdftitle={HDAT9400 Data Management: S, M, L, XL Data},
+	    pdfkeywords={data management, time complexity, data processing, health data, big data}}
+
 \renewcommand{\gitMark}{\color{gray}\texttt{\tiny\gitBranch\,@\,\gitAbbrevHash\,\gitAuthorDate}}
 
 \renewcommand{\bibsection}{} % suppress "References" section
 
 \setbeamertemplate{navigation symbols}{} % remove navigation symbols
+\setbeamertemplate{page number in head/foot}[totalpagenumber]
 \setbeamercolor*{item}{fg=darkred}
 
 \title{HDAT9400 Data Management: S, M, L, XL Data}
@@ -38,6 +43,14 @@
     \node[anchor=south west,scale=1,rotate=90] at ([shift={(0cm,0cm)}]current page marginpar area.south east) {\gitMark};
 \end{tikzpicture}%
 }
+
+\titlegraphic{%
+\begin{tikzpicture}[overlay,remember picture]
+	\node[anchor=south west,scale=0.33] at ([shift={(0cm,0cm)}]current page text area.south west)
+	{\includegraphics{ref/unsw-cbdrh-land}};
+\end{tikzpicture}
+}
+
 \begin{document}
 
 {
@@ -57,6 +70,13 @@
 % ADPC
 % EHR data
 % (Clickstream)
+%
+% Data	rows		cols	GB
+% RoCC	1.50E+04	25	0.0016875
+% PDC	1.60E+06	170	1.224
+% APDC	5.30E+07	64	15.264
+% PBS	4.00E+09	22	396
+%
 % -	What are the (performance) characteristics of typical data processing methods?
 % Data items (order), data items per second, Complexity, Flexibility, Cost/infrastructure requirements
 % o	In memory [R]
