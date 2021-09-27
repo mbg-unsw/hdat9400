@@ -64,6 +64,13 @@
 % o	Time and space are finite
 % o	Costs and deadlines
 % o	Work smarter not harder
+% o	Good news, this is well-trodden ground
+
+\begin{frame}{Why does data size matter?}
+    \begin{itemize}
+        \item XXXX
+    \end{itemize}
+\end{frame}
 
 % -	How big are typical health data sets?
 % o	Examples: rows x columns
@@ -89,9 +96,13 @@
 % o	OLTP [RDBMS]
 % o	OLAP [DuckDB]
 % o	Parallel [Spark]
+
+% -	The simplest thing: a table scan
+% o	Sometimes you just need to shlepp through the data
 %
 % -	What size data can you analyse with R, SAS, or an RDBMS?
 %       Do some experiments and show results
+% -	Digression on compiled v interpreted?
 %
 % -	Centre for Modestly Sized Data Research in Health
 %
@@ -99,11 +110,19 @@
 % o	Big O notation
 % o	Sorting, Indexes, hashing
 % o	SQL and query optimisation
+% o	Digression on parallel processing? MapReduce
+%
+% -	Demo, adding an index in SAS and the WHERE
 %
 % -	Statistical modelling with bigger data
 %
 % -	Final real-world examples
 % o	E.g. BHI hospital performance reporting, …
+%	**** ask BHI contact ****
+% o	Oisin, time-complexity of different GLMM approaches
+% o	PHRB reporting
+% o	EHealth Data Lake
+% o	Loading the HIE
 %
 
 
@@ -124,11 +143,20 @@
 % o	Which of these datasets is the biggest?
 
 % -	Pop Quiz 2
-% o	
+% o	How long would it take to...
+
+% -	Pop Quiz 3
+% o	Which of these operations is fast? slow?
+%	O(n log n) etc
+
+% -	Pop Quiz 4
+% o	Which of these cannot be computed within one lifetime?
 
 % -	Potential diversion: SPDY
 
 % -	Potential diversion: TP and Sabre
+
+% -	Potential diversion: Parallel processing, MapReduce
 
 % Backgrounds: Rem Koolhaas buildings? (credits page)
 \begin{frame}{Thanks}
