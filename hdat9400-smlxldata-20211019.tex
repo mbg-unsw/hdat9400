@@ -60,42 +60,71 @@
 \end{frame}
 }
 
-% -	Why care about data size?
-% o	Time and space are finite
-% o	Costs and deadlines
-% o	Work smarter not harder
-% o	Good news, this is well-trodden ground
+\begin{frame}{Lecture outline}
+\end{frame}
 
-\begin{frame}{Why does data size matter?}
+\begin{frame}{About me}
     \begin{itemize}
-        \item XXXX
+        \item When I studied computer science (1990), a PC had
+	    \begin{itemize}
+		\item 4MB RAM (1000th today's phones)
+		\item 200MB Disk (1000th today's phones)
+		\item 33MHz Processor (100th today's phones)
+	    \end{itemize}
     \end{itemize}
 \end{frame}
 
-% -	How big are typical health data sets?
-% o	Examples: rows x columns
-% *** check example data used in this course incl. assignments
-% RCT results
-% Clinical registry
-% Population survey (NHANES)
-% PBS data
-% ADPC
-% EHR data
-% (Clickstream)
-%
-% Data	rows		cols	GB
-% RoCC	1.50E+04	25	0.0016875
-% PDC	1.60E+06	170	1.224
-% APDC	5.30E+07	64	15.264
-% PBS	4.00E+09	22	396
-%
-% -	What are the (performance) characteristics of typical data processing methods?
-% Data items (order), data items per second, Complexity, Flexibility, Cost/infrastructure requirements
-% o	In memory [R]
-% o	On disk sequential scan [SAS]
-% o	OLTP [RDBMS]
-% o	OLAP [DuckDB]
-% o	Parallel [Spark]
+\begin{frame}{Health data I've worked with}
+    \begin{itemize}
+	\item NPS MedicineWise: GP eletronic medical records (MedicineInsight)
+	\item NSW Ministry of Health: hospital, ambulance, births
+	\item CBDRH: Pharmaceutcal Benefits Scheme (PBS)
+	\item SAS, R, MS SQL Server, PostgreSQL, SQLite, DuckDB
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Why does data size matter?}
+    \begin{itemize}
+        \item Time and space are finite
+	\item We have budgets and deadlines
+	\item Two times bigger can be more than two times slower 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{What can we do about it?}
+    \begin{itemize}
+	\item Work smarter, not harder
+	\item Relax, people have been working on this for a long time!
+    \end{itemize}
+\end{frame}
+
+
+% XXXX consider decimal alignment for Gigabytes column
+
+\begin{frame}{How big are health data sets?}
+    \begin{tabular}{lrr}
+	\textbf{Data} & \textbf{Records} & \textbf{Gigabytes} \\
+	NSW congenital conditions (5 years)& 10\,000 & 0.001 \\
+	NSW perinatal (20 years) & 1\,000\,000 & 1 \\
+	NSW Admitted patients (20 years) & 100\,000\,000 & 15 \\
+	AU Pharmaceutical benefits (20 years) & 1\,000\,000\,000 & 400 \\
+	XXXX Data Lake?? \\
+    \end{tabular}\par
+    \medskip
+    20--200 variables per record
+\end{frame}
+
+\begin{frame}{How can we process the data?}
+    \begin{tabular}{lrrl}
+	\textbf{Method} & \textbf{Max size} & \textbf{Rec per sec} &
+		\textbf{Notes} \\
+	In memory [R] & xx & xx & Simple! \\
+	Disk streaming [SAS] & 1TB & xx & Slower \\
+	Relational database [PostgreSQL] & 1TB & xx & Complicated \\
+	Column-store database [DuckDB] & 1TB & xx & Specialised \\
+	NoSQL [Apache Spark] & ???? & ???? & Don't ask \\
+    \end{tabular}
+\end{frame}
 
 % -	The simplest thing: a table scan
 % o	Sometimes you just need to shlepp through the data
@@ -125,15 +154,6 @@
 % o	Loading the HIE
 %
 
-
-% About me
-% - first degree computer science and pharmacology
-% - worked in IT, academic research, non-profit and government
-% - currently Senior Biostatistician with Medicines Policy Research Unit @ CBDRH
-% - data, statistics and pharmacoepidemiology
-% - SAS, R, databases and software engineering ``Data Carpentry''
-
-% Presentation outline
 
 % Breaks and diversions
 
