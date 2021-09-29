@@ -87,9 +87,12 @@
     \begin{itemize}
         \item Time and space are finite
 	\item We have budgets and deadlines
-	\item Two times bigger can be more than two times slower 
+	\item Two times bigger can take more than twice the time
     \end{itemize}
 \end{frame}
+
+% XXXX would be nice to have an example of a problem that becomes
+% intractable at larger n
 
 \begin{frame}{What can we do about it?}
     \begin{itemize}
@@ -114,7 +117,7 @@
     20--200 variables per record
 \end{frame}
 
-\begin{frame}{How can we process the data?}
+\begin{frame}{Examples of different data processing technologies}
     \begin{tabular}{lrrl}
 	\textbf{Method} & \textbf{Max size} & \textbf{Rec per sec} &
 		\textbf{Notes} \\
@@ -126,9 +129,75 @@
     \end{tabular}
 \end{frame}
 
-% -	The simplest thing: a table scan
-% o	Sometimes you just need to shlepp through the data
-%
+\begin{frame}{Starting simple: process all the data}
+    \begin{itemize}
+	\item Sometimes you need to look at every record aka \emph{table scan}
+	    \begin{itemize}
+		\item e.g. What is the total length of stay of all NSW admissions?
+	    \end{itemize}
+	\item All else being equal, twice the data takes twice the time
+	\item Most important distinction: scan in memory (RAM) or disk?
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Making things more complicated}
+    \begin{itemize}
+	\item Sort all prescriptions by date of prescription
+	\item Analyse all data from hospitals in Sydney
+	\item For each antibiotic prescription, find the corresponding doctor visit
+	\item Build a regression model for risk of low birth weight based on maternal characteristics
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Experiment: sorting in SAS}
+    \begin{itemize}
+	\item XXXX
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Time (and space) complexity}
+    \begin{itemize}
+	\item Asymptotic complexity % explain leading term etc
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Speed of common algorithms}
+    \begin{tabular}{ll}
+	Sort & $\mathcal{O}(n\log{}n)$ \\
+	(Binary) search & $\mathcal{O}(\log{}n)$ \\
+	Matrix inversion & $\mathcal{O}(n^2\log{}n)$ \\ % XXXX
+	XXXX % XXXX hashing, indexes...
+    \end{tabular}
+\end{frame}
+
+\begin{frame}{Speeding up WHERE using an index}
+    \begin{itemize}
+	\item XXXX
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Real world example: NSW hospital readmission rates I}
+    \begin{itemize}
+	\item Bureau of Health Information
+	\item Quarterly report on hospital performance
+	\item Mixed models, SAS
+	\item Run time for the analysis: XXXX
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Real world example: NSW hospital readmission rates II}
+% insert some output fromt the report e.g. caterpillar plot, funnel plot
+\end{frame}
+
+\begin{frame}{Real world example: C****-19 cases daily reporting}
+\end{frame}
+
+\begin{frame}{Bonus round: what about \emph{big data}?}
+    \begin{itemize}
+	\item Parallel processing e.g. Google MapReduce
+    \end{itemize}
+\end{frame}
+
 % -	What size data can you analyse with R, SAS, or an RDBMS?
 %       Do some experiments and show results
 % -	Digression on compiled v interpreted?
@@ -136,20 +205,15 @@
 % -	Centre for Modestly Sized Data Research in Health
 %
 % -	Algorithms, efficiency and optimisation
-% o	Big O notation
-% o	Sorting, Indexes, hashing
 % o	SQL and query optimisation
-% o	Digression on parallel processing? MapReduce
-%
-% -	Demo, adding an index in SAS and the WHERE
 %
 % -	Statistical modelling with bigger data
 %
 % -	Final real-world examples
 % o	E.g. BHI hospital performance reporting, …
 %	**** ask BHI contact ****
+%	Joe Hanna, Kha, Sadaf, Lilian
 % o	Oisin, time-complexity of different GLMM approaches
-% o	PHRB reporting
 % o	EHealth Data Lake
 % o	Loading the HIE
 %
@@ -176,13 +240,14 @@
 
 % -	Potential diversion: TP and Sabre
 
-% -	Potential diversion: Parallel processing, MapReduce
-
 % Backgrounds: Rem Koolhaas buildings? (credits page)
 \begin{frame}{Thanks}
     \begin{itemize}
         \item XXXX
     \end{itemize}
+\end{frame}
+
+\begin{frame}{Further reading}
 \end{frame}
 
 \begin{frame}{References}
