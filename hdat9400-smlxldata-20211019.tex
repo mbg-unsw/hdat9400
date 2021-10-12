@@ -21,8 +21,9 @@
 \usepackage{tikzpagenodes}
 \usepackage[round]{natbib}
 \usepackage{gitinfo2}
-
-\hypersetup{pdfauthor={(C) 2021 Malcolm Gillies. CC-BY-NC-SA},
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links,
+	    pdfauthor={(C) 2021 Malcolm Gillies. CC-BY-NC-SA},
             pdftitle={HDAT9400 Data Management: S, M, L, XL Data},
 	    pdfkeywords={data management, time complexity, data processing, health data, big data}}
 
@@ -111,27 +112,33 @@
 	NSW perinatal (20 years) & 1\,000\,000 & 1 \\
 	NSW Admitted patients (20 years) & 100\,000\,000 & 15 \\
 	AU Pharmaceutical benefits (20 years) & 1\,000\,000\,000 & 400 \\
-	XXXX Data Lake?? \\
+	Health ``data lake'' & 1\,000\,000\,000\,000\,000 & 1\,000\,000 \\
     \end{tabular}\par
     \medskip
     20--200 variables per record
+\end{frame}
+
+\begin{frame}{So...}
+\centering
+\includegraphics[width=0.8\textwidth]
+	{ref/cmsdrh.pdf}
 \end{frame}
 
 \begin{frame}{Examples of different data processing technologies}
     \begin{tabular}{lrrl}
 	\textbf{Method} & \textbf{Max size} & \textbf{Rec per sec} &
 		\textbf{Notes} \\
-	In memory [R] & xx & xx & Simple! \\
-	Disk streaming [SAS] & 1TB & xx & Slower \\
-	Relational database [PostgreSQL] & 1TB & xx & Complicated \\
-	Column-store database [DuckDB] & 1TB & xx & Specialised \\
-	NoSQL [Apache Spark] & ???? & ???? & Don't ask \\
+	In memory [R] & GB & 25M & Simple! \\
+	Disk streaming [SAS] & TB & 5M & Slower \\
+	Relational database [PostgreSQL] & TB & 1M & Complicated \\
+	Column-store database [DuckDB] & TB & 50M & Specialised \\
+	NoSQL [Apache Spark] & PB & ???? & Don't ask \\
     \end{tabular}
 \end{frame}
 
 \begin{frame}{Starting simple: process all the data}
     \begin{itemize}
-	\item Sometimes you need to look at every record aka \emph{table scan}
+	\item Sometimes you need to look at every record aka \emph{full table scan}
 	    \begin{itemize}
 		\item e.g. What is the total length of stay of all NSW admissions?
 	    \end{itemize}
@@ -157,16 +164,26 @@
 
 \begin{frame}{Time (and space) complexity}
     \begin{itemize}
-	\item Asymptotic complexity % explain leading term etc
+	\item How does an algorithm ``scale'' with the amount of data?
+	\item Ignore details of the implementation, specific computer etc
+	\item Insight: how does the time/space cost change as $n\rightarrow\infty$ ?
+	\item \emph{Asymptotic complexity} % explain leading term etc
     \end{itemize}
 \end{frame}
 
+\begin{frame}{$\mathcal{O}(n)$ vs $\mathcal{O}(n^2)$}
+\centering
+\includegraphics[height=0.8\textheight]
+	{ref/big-o-graph.pdf}
+\end{frame}
+
 \begin{frame}{Speed of common algorithms}
+\centering
     \begin{tabular}{ll}
-	Sort & $\mathcal{O}(n\log{}n)$ \\
+	Hash lookup & $\mathcal{O}(1)$ \\
 	(Binary) search & $\mathcal{O}(\log{}n)$ \\
+	Sort & $\mathcal{O}(n\log{}n)$ \\
 	Matrix inversion & $\mathcal{O}(n^2\log{}n)$ \\ % XXXX
-	XXXX % XXXX hashing, indexes...
     \end{tabular}
 \end{frame}
 
@@ -181,14 +198,15 @@
 	\item Bureau of Health Information
 	\item Quarterly report on hospital performance
 	\item Mixed models, SAS
-	\item Run time for the analysis: XXXX
+	\item 32\,000 records, 177 hospitals
+	\item Run time for the analysis: 1 minute
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Real world example: NSW hospital readmission rates II}
 % insert some output fromt the report e.g. caterpillar plot, funnel plot
 \centering
-\includegraphics[height=0.75\textheight]
+\includegraphics[height=0.8\textheight]
 	{ref/ami-rsrr.pdf}
 
 %	\tiny 9 March 2020
@@ -202,6 +220,9 @@
     \begin{itemize}
 	\item Parallel processing e.g. Google MapReduce
     \end{itemize}
+\end{frame}
+
+\begin{frame}{Summary}
 \end{frame}
 
 % -	What size data can you analyse with R, SAS, or an RDBMS?
@@ -257,6 +278,10 @@
 \end{frame}
 
 \begin{frame}{Further reading}
+    \begin{itemize}
+	\item \href{https://discrete.gr/complexity/}{A Gentle Introduction to Algorithm Complexity Analysis} by Dionysis Zindros
+	\item \href{https://h2oai.github.io/db-benchmark/}{Database-like ops benchmark} by \tt{data.table} developers
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{References}
