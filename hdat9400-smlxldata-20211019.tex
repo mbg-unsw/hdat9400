@@ -19,7 +19,6 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{tikzpagenodes}
-\usepackage[round]{natbib}
 \usepackage{gitinfo2}
 \definecolor{links}{HTML}{2A1B81}
 \hypersetup{colorlinks,linkcolor=,urlcolor=links,
@@ -28,8 +27,6 @@
 	    pdfkeywords={data management, time complexity, data processing, health data, big data}}
 
 \renewcommand{\gitMark}{\color{gray}\texttt{\tiny\gitBranch\,@\,\gitAbbrevHash\,\gitAuthorDate}}
-
-\renewcommand{\bibsection}{} % suppress "References" section
 
 \setbeamertemplate{navigation symbols}{} % remove navigation symbols
 \setbeamertemplate{page number in head/foot}[totalpagenumber]
@@ -58,6 +55,12 @@
 %\usebackgroundtemplate{}
 \begin{frame}
 \titlepage
+\end{frame}
+}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{ref/ijplein.jpg}}
+\begin{frame}[plain]
 \end{frame}
 }
 
@@ -102,6 +105,11 @@
     \end{itemize}
 \end{frame}
 
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{ref/kunsthal.jpg}}
+\begin{frame}[plain]
+\end{frame}
+}
 
 % XXXX consider decimal alignment for Gigabytes column
 
@@ -118,9 +126,20 @@
     20--200 variables per record
 \end{frame}
 
+\begin{frame}{What is ``big data''?}
+\centering
+\begin{minipage}{0.8\textwidth}
+\textbf{Big data} is a field that treats ways to analyze,
+systematically extract information from, or otherwise deal with data sets
+that are too large or complex to be dealt with by traditional
+data-processing application software.
+\end{minipage}
+\flushright{--- Wikipedia}
+\end{frame}
+
 \begin{frame}{So...}
 \centering
-\includegraphics[width=0.8\textwidth]
+\includegraphics[width=1.0\textwidth]
 	{ref/cmsdrh.pdf}
 \end{frame}
 
@@ -155,6 +174,12 @@
 	\item Build a regression model for risk of low birth weight based on maternal characteristics
     \end{itemize}
 \end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{ref/Seattle_Public_Library.jpg}}
+\begin{frame}[plain]
+\end{frame}
+}
 
 \begin{frame}{Experiment: sorting in SAS}
     \begin{itemize}
@@ -193,6 +218,12 @@
     \end{itemize}
 \end{frame}
 
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{ref/rotterdam.jpg}}
+\begin{frame}[plain]
+\end{frame}
+}
+
 \begin{frame}{Real world example: NSW hospital readmission rates I}
     \begin{itemize}
 	\item Bureau of Health Information
@@ -229,17 +260,12 @@
 %       Do some experiments and show results
 % -	Digression on compiled v interpreted?
 %
-% -	Centre for Modestly Sized Data Research in Health
-%
 % -	Algorithms, efficiency and optimisation
 % o	SQL and query optimisation
 %
 % -	Statistical modelling with bigger data
 %
 % -	Final real-world examples
-% o	E.g. BHI hospital performance reporting, …
-%	**** ask BHI contact ****
-%	Joe Hanna, Kha, Sadaf, Lilian
 % o	Oisin, time-complexity of different GLMM approaches
 % o	EHealth Data Lake
 % o	Loading the HIE
@@ -280,13 +306,24 @@
 \begin{frame}{Further reading}
     \begin{itemize}
 	\item \href{https://discrete.gr/complexity/}{A Gentle Introduction to Algorithm Complexity Analysis} by Dionysis Zindros
-	\item \href{https://h2oai.github.io/db-benchmark/}{Database-like ops benchmark} by \tt{data.table} developers
+	\item \href{https://h2oai.github.io/db-benchmark/}{Database-like ops benchmark} by \texttt{data.table} developers
     \end{itemize}
 \end{frame}
 
-\begin{frame}{References}
-        \tiny\bibliography{hdat9400.bib}
-        \bibliographystyle{abbrvnat}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{ref/rem.jpg}}
+\begin{frame}[plain]
+\end{frame}
+}
+
+\begin{frame}{Picture credits (Creative Commons)}
+    \begin{itemize}
+	\item Nieuwbouw IJplein by Bart Molendijk / Anefo
+	\item Kunsthal, Rotterdam by Fred Romero
+	\item Seattle Public Library by \href{https://www.flickr.com/people/moody75/}{Moody 75}
+	\item De Rotterdam by Fred Romero
+	\item Kunsthal, Rem Koolhaas portrait by Jacco van Giessen
+    \end{itemize}
 \end{frame}
 
 \end{document}
