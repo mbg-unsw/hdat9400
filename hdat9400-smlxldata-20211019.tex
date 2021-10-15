@@ -268,6 +268,17 @@ run;
 \end{frame}
 }
 
+\begin{frame}{Real world example: Matching ED and in-patient episodes (1)}
+    \begin{itemize}
+	\item SAS merge on PPN (patient ID) and date
+	\item 50M records in Admitted Patient Data Collection
+	\item Sort, sort and merge \rightarrow{} \emph{hours}
+	\item R: can load <1\% into memory
+	    \begin{itemize}
+		\item 1M records, subset of 16 variables \rightarrow{} 2.5s
+	    \end{itemize}
+\end{frame}
+
 \begin{frame}{Real world example: Modelling ICU glucose control (1)}
     \begin{itemize}
 	\item Blood glucose levels in ICU monitored and insulin given
@@ -317,8 +328,6 @@ run;
 \begin{frame}{Summary}
 \end{frame}
 
-% -	What size data can you analyse with R, SAS, or an RDBMS?
-%       Do some experiments and show results
 % -	Digression on compiled v interpreted?
 %
 % -	Algorithms, efficiency and optimisation
@@ -327,7 +336,6 @@ run;
 % -	Statistical modelling with bigger data
 %
 % -	Final real-world examples
-% o	Oisin, time-complexity of different GLMM approaches
 % o	EHealth Data Lake
 % o	Loading the HIE
 %
@@ -354,7 +362,6 @@ run;
 
 % -	Potential diversion: TP and Sabre
 
-% Backgrounds: Rem Koolhaas buildings? (credits page)
 \begin{frame}{Thanks}
     \begin{itemize}
         \item Sadaf Marashi-Pour (Bureau of Health Information)
