@@ -268,7 +268,33 @@ run;
 \end{frame}
 }
 
-\begin{frame}{Real world example: NSW hospital readmission rates I}
+\begin{frame}{Real world example: Modelling ICU glucose control (1)}
+    \begin{itemize}
+	\item Blood glucose levels in ICU monitored and insulin given
+	\item What are risk factors for glucose >180 mg/dL?
+	\item Covariates: severity score (APACHE), diabetes dx, age, gender, insulin
+	\item 1M observations, 200K patients, 200 ICUs
+	\item Generalised linear mixed model (3 level)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Real world example: Modelling ICU glucose control (2)}
+\begin{columns}
+    \begin{column}{0.65\textwidth}
+    \centering
+    \includegraphics[height=0.8\textheight]
+	    {ref/oisin.pdf}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+	\begin{itemize}
+	    \item MixedModels.jl
+	    \item \emph{Full model too large for R lme4}
+	\end{itemize}
+    \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Real world example: NSW hospital readmission rates (1)}
     \begin{itemize}
 	\item Bureau of Health Information
 	\item Quarterly report on hospital performance
@@ -278,7 +304,7 @@ run;
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Real world example: NSW hospital readmission rates II}
+\begin{frame}{Real world example: NSW hospital readmission rates (2)}
 % insert some output fromt the report e.g. caterpillar plot, funnel plot
 \centering
 \includegraphics[height=0.8\textheight]
