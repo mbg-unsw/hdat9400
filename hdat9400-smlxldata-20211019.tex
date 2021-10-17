@@ -268,15 +268,16 @@ run;
 \end{frame}
 }
 
-\begin{frame}{Real world example: Matching ED and in-patient episodes (1)}
+\begin{frame}{Real world example: Matching ED and in-patient episodes}
     \begin{itemize}
-	\item SAS merge on PPN (patient ID) and date
 	\item 50M records in Admitted Patient Data Collection
-	\item Sort, sort and merge \rightarrow{} \emph{hours}
-	\item R: can load <1\% into memory
+	\item SAS merge on PPN (patient ID) and date
+	\item Sort, sort and merge $\rightarrow$ \emph{hours}
+	\item R: cannot load complete data set into memory
 	    \begin{itemize}
-		\item 1M records, subset of 16 variables \rightarrow{} 2.5s
+		\item 1M records, subset of 16 variables $\rightarrow$ 2.5s
 	    \end{itemize}
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Real world example: Modelling ICU glucose control (1)}
