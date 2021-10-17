@@ -108,8 +108,9 @@
 
 \begin{frame}{What can we do about it?}
     \begin{itemize}
-	\item Work smarter, not harder
-	\item Relax, people have been thinking about this for a long time!
+	\item \emph{Work smarter, not harder}
+	\item Learn from the theory of algorithms
+	\item Use efficient data-processing tools
     \end{itemize}
 \end{frame}
 
@@ -204,7 +205,7 @@ data-processing application software.
 	{ref/big-o-graph.pdf}
 \end{frame}
 
-\begin{frame}{Speed of common algorithms}
+\begin{frame}{Optimal speed of common algorithms}
 \centering
     \begin{tabular}{ll}
 	Hash lookup & $\mathcal{O}(1)$ \\
@@ -271,11 +272,13 @@ run;
 \begin{frame}{Real world example: Matching ED and in-patient episodes}
     \begin{itemize}
 	\item 50M records in Admitted Patient Data Collection
+	\item 50M records in Emergency Department Data Collection
 	\item SAS merge on PPN (patient ID) and date
 	\item Sort, sort and merge $\rightarrow$ \emph{hours}
 	\item R: cannot load complete data set into memory
 	    \begin{itemize}
 		\item 1M records, subset of 16 variables $\rightarrow$ 2.5s
+		\item need to process in chunks, similar total run time to SAS
 	    \end{itemize}
     \end{itemize}
 \end{frame}
@@ -327,6 +330,13 @@ run;
 \end{frame}
 
 \begin{frame}{Summary}
+    \begin{itemize}
+	\item Computers are fast and most data isn't that big
+	\item We have a bunch of excellent data processing tools
+	\item If you do things the wrong way, time and space limits can bite
+	\item Some tasks will always be ``slow'' asymptotically
+	\item Think about the size of your data before you start
+    \end{itemize}
 \end{frame}
 
 % -	Digression on compiled v interpreted?
@@ -376,6 +386,7 @@ run;
     \begin{itemize}
 	\item \href{https://discrete.gr/complexity/}{A Gentle Introduction to Algorithm Complexity Analysis} by Dionysis Zindros
 	\item \href{https://h2oai.github.io/db-benchmark/}{Database-like ops benchmark} by \texttt{data.table} developers
+	\item \href{https://m-clark.github.io/posts/2019-10-20-big-mixed-models/}{Mixed Models for Big Data} by Michael Clark
     \end{itemize}
 \end{frame}
 
