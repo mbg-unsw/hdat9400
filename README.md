@@ -2,7 +2,7 @@
 A 45-minute lecture discussing the size of different kinds of health datasets, the performance characteristics
 of different data processing technologies, and introducing the concept of algorithmic time complexity.
 
-To be delivered on 19 October 2021. 
+Delivered on 19 October 2021. 
 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
